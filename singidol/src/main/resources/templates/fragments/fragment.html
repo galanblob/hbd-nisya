@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>SINGIDOL</title>
+
+    <head th:fragment="css">
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css/}" />
+    </head>
+
+    <head th:fragment="js">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFIBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+        <script th:src="@{/js/bootstrap.min.js/}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+</head>
+<body>
+<nav th:fragment="navbar(page)" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand font-weight-bold text-primary" href="/">Singidol</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li th:classappend="${page == 'Konser'} ? active : ''" class="nav-item">
+                <a class="nav-link" href="/konser">Konser</a>
+            </li>
+            <li th:classappend="${page == 'Tiket'} ? active : ''" class="nav-item">
+                <a class="nav-link" href="/tiket">Tiket</a>
+            </li>
+            </li>
+            <li th:classappend="${page == 'Idol'} ? active : ''" class="nav-item">
+                <a class="nav-link" href="/idol">Idol</a>
+            </li>
+            <li th:classappend="${page == 'Bonus'} ? active : ''" class="nav-item">
+                <a class="nav-link" href="/bonus/konser/top">Bonus</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

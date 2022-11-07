@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Add Course</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body>
+<nav th:replace="fragments/fragment :: navbar('Konser')"></nav>
+
+<div class="container">
+    <div class="card m-4 p-4">
+        <div class="card-body">
+            <div class="justify-content-center">
+                <h2>Cari Konser Top</h2>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <a th:href="@{/bonus/konser/top/vip}" class="mx-2 btn btn-primary">VIP</a>
+                    <a th:href="@{/bonus/konser/top/platinum}" class="mx-2 btn btn-primary">Platinum</a>
+                    <a th:href="@{/bonus/konser/top/gold}" class="mx-2 btn btn-primary">Gold</a>
+                    <a th:href="@{/bonus/konser/top/silver}" class="mx-2 btn btn-primary">Silver</a>
+                </div>
+                </tr>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

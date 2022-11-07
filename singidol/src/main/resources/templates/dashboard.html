@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+      integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      /* h1 {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
+        border-radius: 10px;
+        background-color: white;
+      } */
+      .card {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        width: fit-content;
+      }
+      .title {
+        box-shadow: 0 4px 8px rgb(0 0 0 / 3%);
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .num {
+        width: 270px;
+        padding: 0px;
+      }
+<<<<<<< HEAD
+      .filter {
+        width: 500px;
+      }
+=======
+>>>>>>> b0081057ed678593b532d2cda1db09dd85317664
+    </style>
+  </head>
+  <body style="background-color: #f7f7f7">
+    <!-- <body> -->
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+    <!-- <div th:replace="fragments/fragment :: header"></div> -->
+
+    <div class="container-lg">
+      <div class="row-lg title d-flex justify-content-between my-3">
+        <div class="col-3 align-items-center d-flex">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="col-6 align-items-center d-flex justify-content-between">
+<<<<<<< HEAD
+          <select class="form-control" th:onchange="'window.location.href = \'' + @{/dashboard/filter} + '?jenjang=' + ${jenjang} + '&idTahunAjaran=\' + this.value' ">
+            <option th:value="0" th:selected="${idTahunAjaran == 0}">All</option>
+            <option th:text="${tahunAjaran.dariTahun} + '/' + ${tahunAjaran.hinggaTahun}" th:each="tahunAjaran : ${tahunAjaranList}" th:value="${tahunAjaran.id}" th:selected="${idTahunAjaran == tahunAjaran.id}"></option>
+          </select>
+          <div class="filter ms-4">
+            <!-- Jenjang: -->
+            <a class="btn" th:classappend="${jenjang == 0 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=0, idTahunAjaran=${idTahunAjaran})}">All</a>
+            <a class="btn" th:classappend="${jenjang == 1 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=1, idTahunAjaran=${idTahunAjaran})}">MD</a>
+            <a class="btn" th:classappend="${jenjang == 2 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=2, idTahunAjaran=${idTahunAjaran})}">MTs</a>
+            <a class="btn" th:classappend="${jenjang == 3 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=3, idTahunAjaran=${idTahunAjaran})}">MA</a>
+=======
+          <div class="flex-grow-1 me-4">
+            <small class="text-muted">Tahun Ajaran</small>
+            <select class="form-control" th:onchange="'window.location.href = \'' + @{/dashboard/filter} + '?jenjang=' + ${jenjang} + '&idTahunAjaran=\' + this.value' ">
+              <option th:value="0" th:selected="${idTahunAjaran == 0}">All</option>
+              <option th:text="${tahunAjaran.dariTahun} + '/' + ${tahunAjaran.hinggaTahun}" th:each="tahunAjaran : ${tahunAjaranList}" th:value="${tahunAjaran.id}" th:selected="${idTahunAjaran == tahunAjaran.id}"></option>
+            </select>
+          </div>
+          <div class="">
+            <small class="text-muted">Jenjang</small>
+            <div class="filter">
+              <!-- Jenjang: -->
+              <a class="btn" th:classappend="${jenjang == 0 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=0, idTahunAjaran=${idTahunAjaran})}">All</a>
+              <a class="btn" th:classappend="${jenjang == 1 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=1, idTahunAjaran=${idTahunAjaran})}">MD</a>
+              <a class="btn" th:classappend="${jenjang == 2 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=2, idTahunAjaran=${idTahunAjaran})}">MTs</a>
+              <a class="btn" th:classappend="${jenjang == 3 ? 'btn-primary text-light':'btn-outline-primary'}" th:href="@{/dashboard/filter(jenjang=3, idTahunAjaran=${idTahunAjaran})}">MA</a>
+            </div>
+>>>>>>> b0081057ed678593b532d2cda1db09dd85317664
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="d-flex justify-content-between row-lg">
+          <!-- total pendaftar:
+          <p th:text="${isValid}"></p>
+          total kelulusan:
+          <p th:text="${isLulus}"></p>
+          total lapor diri:
+          <p th:text="${isLaporDiri}"></p> -->
+          <div class="num card">
+            <div id="pendaftarnum" style="font-size: 3.5rem; font-weight: 700; text-align: center" th:text="${numPendaftar}"></div>
+            <h5 class="text-center">Total Pendaftar</h5>
+          </div>
+          <div class="num card">
+            <div id="validnum" style="font-size: 3.5rem; font-weight: 700; text-align: center" th:text="${isValid}"></div>
+            <h5 class="text-center">Total Pendaftar Valid</h5>
+          </div>
+          <div class="num card">
+            <div id="lulusnum" style="font-size: 3.5rem; font-weight: 700; text-align: center" th:text="${isLulus}"></div>
+            <h5 class="text-center">Total Lulus</h5>
+          </div>
+          <div class="num card">
+            <div id="lapornum" style="font-size: 3.5rem; font-weight: 700; text-align: center" th:text="${isLaporDiri}"></div>
+            <h5 class="text-center">Total Lapor Diri</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row-lg d-flex justify-content-between my-3">
+        <div class="d-flex justify-content-center card">
+          <h4 class="text-center mb-4 fw-bold">Jumlah PPDB</h4>
+          <div style="height: 250px; width: 510px">
+            <canvas id="siswaChart"></canvas>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center card">
+          <h4 class="text-center mb-4 fw-bold">Rata-rata Nilai Tes</h4>
+          <div style="height: 250px; width: 510px">
+            <canvas id="nilaiChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between row-lg mb-3">
+        <div class="d-flex justify-content-center card">
+          <h4 class="text-center mb-4 fw-bold">Rasio Per Jenjang</h4>
+          <div style="height: 200px; width: 340px">
+            <canvas id="jenjangChart"></canvas>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center card">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Gelombang 1</th>
+                <th>Gelombang 2</th>
+                <th>Gelombang 3</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jumlah Pendaftar</td>
+                <td th:text="${pendaftargel1}"></td>
+                <td th:text="${pendaftargel2}"></td>
+                <td th:text="${pendaftargel3}"></td>
+                <td th:text="${numPendaftar}"></td>
+              </tr>
+              <tr>
+                <td>Jumlah Pendaftar Tervalidasi</td>
+                <td th:text="${validgel1}"></td>
+                <td th:text="${validgel2}"></td>
+                <td th:text="${validgel3}"></td>
+                <td th:text="${isValid}"></td>
+              </tr>
+              <tr>
+                <td>Jumlah Peserta Lulus Tes</td>
+                <td th:text="${lulusgel1}"></td>
+                <td th:text="${lulusgel2}"></td>
+                <td th:text="${lulusgel3}"></td>
+                <td th:text="${isLulus}"></td>
+              </tr>
+              <tr>
+                <td>Jumlah Peserta Lapor Diri</td>
+                <td th:text="${laporgel1}"></td>
+                <td th:text="${laporgel2}"></td>
+                <td th:text="${laporgel3}"></td>
+                <td th:text="${isLaporDiri}"></td>
+              </tr>
+              <tr>
+                <td>Nilai Rata-rata</td>
+                <td th:text="${nilaigel1}"></td>
+                <td th:text="${nilaigel2}"></td>
+                <td th:text="${nilaigel3}"></td>
+                <td th:text="${nilaigel1 + nilaigel2 + nilaigel3}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+<<<<<<< HEAD
+=======
+    <div th:replace="fragments/fragment :: footer"></div>
+>>>>>>> b0081057ed678593b532d2cda1db09dd85317664
+    <!-- Jika ingin menambahkan script yang berlaku di satu halaman letakan dibawah ini didalam body -->
+    <script th:inline="javascript">
+<!--      /*<![CDATA[*/-->
+<!--      var delay = 50;-->
+<!--      function incEltNbr(id) {-->
+<!--        elt = document.getElementById(id);-->
+<!--        endNbr = Number(document.getElementById(id).innerHTML);-->
+<!--        incNbrRec(0, endNbr, elt);-->
+<!--      }-->
+<!--      function incNbrRec(i, endNbr, elt) {-->
+<!--        if (i <= endNbr) {-->
+<!--          elt.innerHTML = i;-->
+<!--          setTimeout(function () {-->
+<!--            incNbrRec(i + 1, endNbr, elt);-->
+<!--          }, delay);-->
+<!--        }-->
+<!--      }-->
+      incEltNbr("pendaftarnum");
+      incEltNbr("validnum");
+      incEltNbr("lulusnum");
+      incEltNbr("lapornum");
+      var siswactx = document.getElementById("siswaChart").getContext("2d");
+      var nilaictx = document.getElementById("nilaiChart").getContext("2d");
+      var jenjangctx = document.getElementById("jenjangChart").getContext("2d");
+      var validgel1 = /*[[${validgel1}]]*/ "";
+      var validgel2 = /*[[${validgel2}]]*/ "";
+      var validgel3 = /*[[${validgel3}]]*/ "";
+      var lulusgel1 = /*[[${lulusgel1}]]*/ "";
+      var lulusgel2 = /*[[${lulusgel2}]]*/ "";
+      var lulusgel3 = /*[[${lulusgel3}]]*/ "";
+      var laporgel1 = /*[[${laporgel1}]]*/ "";
+      var laporgel2 = /*[[${laporgel2}]]*/ "";
+      var laporgel3 = /*[[${laporgel3}]]*/ "";
+      var nilaigel1 = /*[[${nilaigel1}]]*/ "";
+      var nilaigel2 = /*[[${nilaigel2}]]*/ "";
+      var nilaigel3 = /*[[${nilaigel3}]]*/ "";
+      var md = /*[[${md}]]*/ "";
+      var mts = /*[[${mts}]]*/ "";
+      var ma = /*[[${ma}]]*/ "";
+      var siswadata = {
+        labels: ["Gelombang 1", "Gelombang 2", "Gelombang 3"],
+        datasets: [
+          {
+            label: "Pendaftar",
+            backgroundColor: "#378164",
+            data: [validgel1, validgel2, validgel3],
+          },
+          {
+            label: "Lulus",
+            backgroundColor: "#109D56",
+            data: [lulusgel1, lulusgel2, lulusgel3],
+          },
+          {
+            label: "Lapor Diri",
+            backgroundColor: "#84CBA9",
+            data: [laporgel1, laporgel2, laporgel3],
+          },
+        ],
+      };
+      var nilaidata = {
+        labels: ["Gelombang 1", "Gelombang 2", "Gelombang 3"],
+        datasets: [
+          {
+            label: "Nilai Rata-rata",
+            backgroundColor: "#378164",
+            data: [nilaigel1, nilaigel2, nilaigel3],
+          },
+        ],
+      };
+      var jenjangdata = {
+        labels: ["MD", "Mts", "MA"],
+        datasets: [
+          {
+            label: "Rasio Per Jenjang",
+            data: [md, mts, ma],
+            backgroundColor: ["#109D56", "#378164", "#84CBA9"],
+            hoverOffset: 8,
+          },
+        ],
+      };
+
+      var siswaBarChart = new Chart(siswactx, {
+        type: "bar",
+        data: siswadata,
+        options: {
+          maintainAspectRatio: false,
+          barValueSpacing: 5,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                  callback: (yValue) => {
+                    return Math.floor(yValue);
+                  },
+                },
+              },
+            ],
+          },
+        },
+      });
+      var nilaiBarChart = new Chart(nilaictx, {
+        type: "bar",
+        data: nilaidata,
+        options: {
+          maintainAspectRatio: false,
+          barValueSpacing: 5,
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                  callback: (yValue) => {
+                    return Math.floor(yValue);
+                  },
+                },
+              },
+            ],
+          },
+        },
+      });
+      var jenjangPieChart = new Chart(jenjangctx, {
+        type: "pie",
+        data: jenjangdata,
+        options: {
+          maintainAspectRatio: false,
+        },
+      });
+      /*]]>*/
+    </script>
+  </body>
+</html>
