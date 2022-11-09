@@ -1,0 +1,253 @@
+.kotak h1{
+    color: white;
+    text-align: center;
+    font-size: 300%;
+}
+
+.kotak{
+  background: black;
+  width: 100%;
+  height: 610px;
+  padding: 100px 0px;
+}
+
+.kotak row{
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+section {
+  display: block;
+  background: black;
+  height:100%;
+  width:100%;
+  padding: 60px;
+  padding-left: 120px;
+  box-sizing:border-box;
+}
+
+.tengah{
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
+}
+
+.title h2{
+  color: white;
+  text-align: center;
+  font-size: 70px;
+}
+
+.tulisan{
+  color: white;
+  text-align: center;
+}
+
+.tulisan p{
+    max-width: 700px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.foto img{
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.isi-1{
+  background: black;
+  width: 100%;
+  padding: 100px 0px;
+}
+
+button{
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 844px) {
+  /* For mobile phones: */
+  .kotak h1{
+    font-size: 220%;
+  }
+  .tulisan{
+    width: 390px;
+    margin-left: -195px;
+  }
+}
+
+.other-text{ position: absolute; }
+.other-text:nth-child(1){ animation-name: fade1; animation-fill-mode: both; animation-duration: 5s; animation-direction: alternate-reverse;  }
+.other-text:nth-child(2){animation-name: fade2;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 5s;}
+.other-text:nth-child(3){animation-name: fade3;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 10s;}
+.other-text:nth-child(4){animation-name: fade4;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 20s;}
+.other-text:nth-child(5){animation-name: fade5;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 25s;}
+.other-text:nth-child(6){animation-name: fade6;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 30s;}
+.other-text:nth-child(7){animation-name: fade7;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 35s;}
+.other-text:nth-child(8){animation-name: fade8;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 40s;}
+.other-text:nth-child(9){animation-name: fade9;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 45s;}
+.other-text:nth-child(10){animation-name: fade10;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 50s;}
+.other-text:nth-child(11){animation-name: fade11;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 55s;}
+.other-text:nth-child(12){animation-name: fade12;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 60s;}
+.other-text:nth-child(13){animation-name: fade13;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 65s;}
+.other-text:nth-child(14){animation-name: fade14;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 70s;}
+.other-text:nth-child(15){animation-name: fade15;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 75s;}
+.other-text:nth-child(16){animation-name: fade16;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 80s;}
+.other-text:nth-child(17){animation-name: fade17;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 85s;}
+.other-text:nth-child(18){animation-name: fade18;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 90s;}
+.other-text:nth-child(19){animation-name: fade19;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 95s;}
+.other-text:nth-child(20){animation-name: fade20;animation-fill-mode: both; animation-duration: 5s;animation-direction: alternate; animation-delay: 100s;}
+
+@keyframes fade1{
+    0% {
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+
+@keyframes fade2{
+    0%,100% {
+        opacity: 0;
+      }
+      50%{
+        opacity: 1;
+      }
+}
+
+@keyframes fade3{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}
+@keyframes fade4{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}
+@keyframes fade5{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade6{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade7{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade8{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade9{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade10{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade11{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}
+@keyframes fade12{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade13{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade14{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade15{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade16{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade17{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade18{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}@keyframes fade19{
+  0%,100% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+}
+@keyframes fade20{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
