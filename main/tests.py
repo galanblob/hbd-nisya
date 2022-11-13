@@ -22,13 +22,13 @@ class FunctionalTestCase(LiveServerTestCase):
         super().tearDownClass()
 
 
-class MainTestCase(TestCase):
-    def test_root_url_status_200(self):
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
-        # You can also use path names instead of explicit paths.
-        response = self.client.get(reverse('main:home'))
-        self.assertEqual(response.status_code, 200)
+# class MainTestCase(TestCase):
+#     def test_root_url_status_200(self):
+#         response = self.client.get('/')
+#         self.assertEqual(response.status_code, 200)
+#         # You can also use path names instead of explicit paths.
+#         response = self.client.get(reverse('main:home'))
+#         self.assertEqual(response.status_code, 200)
 
 
 class MainFunctionalTestCase(FunctionalTestCase):
