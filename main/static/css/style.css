@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .kotak h1{
-    color: white;
-    text-align: center;
-    font-size: 300%;
+  color: white;
+  text-align: center;
+  font-size: 300%;
 }
 
 .kotak{
@@ -49,9 +49,9 @@ section {
 }
 
 .tulisan p{
-    max-width: 700px;
-    text-align: center;
-    margin: 30px auto;
+  max-width: 700px;
+  text-align: center;
+  margin: 30px auto;
 }
 
 .foto img{
@@ -67,6 +67,74 @@ section {
   padding: 100px 0px;
 }
 
+.isi-1 img{
+  position: relative;
+  animation: animasi 5s ease-in-out 2s infinite alternate;
+}
+
+.my-element {
+  --animate-repeat: 2;
+}
+
+body h2{
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes animasi{
+  0% {top: 0px;}
+  25% {top: 25px;}
+  50% {top: -10px;}
+  100% {top: 0px;}
+}
+
+
+.isi-2{
+  background: black;
+  width: 100%;
+  padding: 100px 0px 10px;
+}
+
+.isi-3{
+  background: black;
+  width: 100%;
+  padding: 200px 0px 200px;
+}
+
+.isi-3 h2{
+  background: black;
+  width: 100%;
+  padding: 200px 0px 200px;
+  font-size: 30px;
+}
+
+.isi-4{
+  padding: 80px 0px 200px;
+}
+.isi-4 .umur {
+  color: yellow;
+}
+
+.isi-5{
+  background: black;
+  padding: 400px 0px 200px;
+}
+
+.isi-6{
+  background: black;
+  padding: 100px 0px 400px;
+}
+
+.isi-6 title p{
+  font-size: xx-large;
+}
+
+.title h1{
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
 button{
   margin-top: 100px;
   justify-content: center;
@@ -75,9 +143,11 @@ button{
 
 @media only screen and (max-width: 844px) {
   /* For mobile phones: */
+
   .kotak h1{
     font-size: 220%;
   }
+
   .tulisan{
     width: 390px;
     margin-left: -195px;
