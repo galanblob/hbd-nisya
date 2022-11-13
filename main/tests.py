@@ -5,8 +5,6 @@ from selenium import webdriver
 
 @tag('functional')
 class FunctionalTestCase(LiveServerTestCase):
-    """Base class for functional test cases with selenium."""
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -38,4 +36,3 @@ class MainFunctionalTestCase(FunctionalTestCase):
         self.selenium.get(f'{self.live_server_url}/')
         html = self.selenium.find_element_by_tag_name('html')
         self.assertNotIn('not found', html.text.lower())
-        self.assertNotIn('error', html.text.lower())
