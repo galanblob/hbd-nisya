@@ -29,7 +29,7 @@
     width: 25px;
     height: 25px;
     right: -11px;
-    background-image: linear-gradient(230deg, #77A1D3 , #79CBCA, #E684AE);
+    background-image: linear-gradient(to right,#77A1D3 , #79CBCA, #E684AE);
     top: 15px;
     border-radius: 50%;
     z-index: 1;

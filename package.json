@@ -1,8 +1,5 @@
 {
   "dependencies": {
     "aos": "^2.3.4"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.2.4"
   }
 }
