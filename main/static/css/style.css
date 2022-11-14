@@ -43,9 +43,12 @@ section {
   font-size: 70px;
 }
 
-.tulisan{
+.tulisan p{
   color: white;
   text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
 }
 
 .tulisan p{
@@ -148,8 +151,19 @@ button{
     font-size: 220%;
   }
 
-  .tulisan{
-    width: 390px;
-    margin-left: -195px;
+  .foto img{
+    width: 50%;
+  }
+
+  .isi-1{
+    padding: 400px 0px 100px;
+  }
+
+  .isi-1 .row{
+    margin-left: -6px;    
+  }
+
+  .isi-6{
+    padding: 200px 0px 320px;
   }
 }
